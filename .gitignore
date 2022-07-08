@@ -1,12 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 # PSA: this gitignore was one and only file provided by the class instructor as starter code for this challenge
 
+*.vscode
 # dependencies
 node_modules/
 # IDE files
 .vs/
-.vscode/*
-!.vscode/settings.json
+.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
