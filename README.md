@@ -43,5 +43,5 @@ Questions? Please contact me at the following links: <br>
 ## [Application Preview](#table-of-contents)
 Click the image to see a video preview of the application and Jest npm tests.
 
-<a href="https://drive.google.com/file/d/1Sc6R8-8rnwq0Vm2cRTqHtk0p8ad9cAgm/view" alt="preview video link"><img src="assets/team-profile-generator.png"></a>
+<a href="https://drive.google.com/file/d/1A5HIhAhcVbr-t3yT9IbiN_eJvyo1-cdg/view" alt="preview video link"><img src="assets/team-profile-generator.png"></a>
 
