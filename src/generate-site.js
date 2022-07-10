@@ -110,7 +110,7 @@ module.exports = team => {
         ${generateTeam(team)}
     </main>
 </body>
-<footer class="container is-fluid has-text-white p-3 has-text-centered has-background-dark">
+<footer class="container is-fluid has-text-black p-3 has-text-centered has-background-grey-light">
 <h3><i class="fa-solid fa-laptop-code mr-1"></i> Team Profile Generator by Jessica E. Calderon. © 2022. </h3>
 </footer>
 </html>
