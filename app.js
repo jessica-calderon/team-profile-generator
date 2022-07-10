@@ -163,6 +163,74 @@ const startEngineer = () => {
         menuStart();
     })
 };
+// start intern logic
+const startIntern = () => {
+    console.log(`
+    ==================
+    Add a New Intern
+    ==================
+    `);
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: "What is the Intern's name? (Required)",
+            validate: internName => {
+                if (internName) {
+                    return true;
+                } else {
+                    console.log("Please enter the Intern's name!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: "Enter the Intern's Employee ID. (Required)",
+            validate: idInput => {
+                if (idInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the Intern's Employee ID!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Enter the Intern's email. (Required)",
+            validate: email => {
+                if (email) {
+                    return true;
+                } else {
+                    console.log("Please enter the Intern's email!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "Please enter the Intern's school name! (Required)",
+            validate: school => {
+                if (school) {
+                    return true;
+                } else {
+                    console.log("Please enter the Intern's school name!");
+                    return false;
+                }
+            }
+        }
+    ])
+    .then(response => {
+        console.log(response);
+        const intern = new Intern(response.name, response.id, response.email, response.school);
+        team.push(intern);
+        menuStart();
+    })
+};
 // return inquire results
 const teamFinish = () => {
     console.log(`
