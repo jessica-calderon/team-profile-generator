@@ -4,7 +4,9 @@ const path = require("path");
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const generateSite = require('./src/generate-site');
+const generateSite = require('./src/generate-site.js');
+const DIST_DIR = path.resolve(__dirname, "dist");
+const renderedHTML = path.join(DIST_DIR, "generatedHTML.html");
 // start empty team array
 const team = [];
 
@@ -238,6 +240,13 @@ const teamFinish = () => {
     Team building completed!
     ========================
     `);
+    console.log(team);
+
+// if dist path doesnt exist
+if (!fs.existsSync(DIST_DIR)) {
+    fs.mkdirSync(DIST_DIR)
+}
+fs.writeFileSync(renderedHTML, generateSite(team), "utf-8");
 }
 // call to start inquire prompts
 startManager();
