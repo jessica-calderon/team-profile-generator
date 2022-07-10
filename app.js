@@ -95,6 +95,74 @@ const menuStart = () => {
         }
     });
 };
+// start engineer inquire
+const startEngineer = () => {
+    console.log(`
+    ==================
+    Add a New Engineer
+    ==================
+    `);
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: "What is the Engineer's name? (Required)",
+            validate: engineerName => {
+                if (engineerName) {
+                    return true;
+                } else {
+                    console.log("Please enter the Engineer's name!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: "Enter the Engineer's Employee ID. (Required)",
+            validate: idInput => {
+                if (idInput) {
+                    return true;
+                } else {
+                    console.log("Please enter the Engineer's Employee ID!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Enter the Engineer's email. (Required)",
+            validate: email => {
+                if (email) {
+                    return true;
+                } else {
+                    console.log("Please enter the Engineer's email!");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: "Enter the Engineer's GitHub username. (Required)",
+            validate: github => {
+                if (github) {
+                    return true;
+                } else {
+                    console.log("Please enter the Engineer's GitHub username!");
+                    return false;
+                }
+            }
+        }
+    ])
+    .then(response => {
+        console.log(response);
+        const engineer = new Engineer(response.name, response.id, response.email, response.github);
+        team.push(engineer);
+        menuStart();
+    })
+};
 // return inquire results
 const teamFinish = () => {
     console.log(`
