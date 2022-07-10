@@ -6,10 +6,11 @@ const generateTeam = (team) => {
     const generateMgr = manager => {
         console.log(manager);
         let mgrData = `
-    <div class="card m-auto p-auto" style="width: fit-content">
+    <div class="card m-3 p-auto" style="width: fit-content">
         <header class="card-header has-background-primary">
+            <p class="card-header-title has-text-white is-justify-content-center">
             ${manager.name} <br>
-            Manager
+            <i class="fa-solid fa-briefcase m-4"></i> Manager</p>
         </header>
         <div class="card-content has-background-white-ter">
         <div class="content has-background-white pt-2 pb-4 pr-5 pl-3 m-1">
@@ -28,11 +29,11 @@ const generateTeam = (team) => {
     const generateEngineer = engineer => {
         console.log(engineer);
         let engineerData = `
-    <div class="card m-auto p-auto" style="width: fit-content">
+    <div class="card m-3 p-auto" style="width: fit-content">
         <header class="card-header has-background-primary">
-            <p class="card-header-title has-text-white">
+            <p class="card-header-title has-text-white is-justify-content-center">
             ${engineer.name} <br>
-            Engineer
+            <i class="fa-solid fa-laptop-code m-4"></i> Engineer
         </header>
         <div class="card-content has-background-white-ter">
         <div class="content has-background-white pt-2 pb-4 pr-5 pl-3 m-1">
@@ -51,11 +52,11 @@ const generateTeam = (team) => {
     const generateIntern = intern => {
         console.log(intern);
         let internData = `
-    <div class="card m-auto p-auto" style="width: fit-content">
+    <div class="card m-3 p-auto" style="width: fit-content">
         <header class="card-header has-background-primary">
-        <p class="card-header-title has-text-white">
+        <p class="card-header-title has-text-white is-justify-content-center">
         ${intern.name} <br>
-        Intern
+        <i class="fa-solid fa-user-graduate m-4"></i> Intern</p>
     </header>
     <div class="card-content has-background-white-ter">
     <div class="content has-background-white pt-2 pb-4 pr-5 pl-3 m-1">
@@ -91,7 +92,7 @@ const generateTeam = (team) => {
 module.exports = team => {
     return `
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-background-grey-light">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -103,12 +104,15 @@ module.exports = team => {
 </head>
 <body>
 <div class="has-background-danger has-text-centered has-text-white">
-    <h1 class="is-size-2 p-4 mb-5">My Team</h1>
+    <h1 class="is-size-2 p-4 mb-5">My Team <i class="fa-solid fa-people-group"></i></h1>
 </div>
-    <main class="is-flex">
+    <main class="is-flex is-flex-wrap-wrap">
         ${generateTeam(team)}
     </main>
 </body>
+<footer class="container is-fluid has-text-white p-3 has-text-centered has-background-dark">
+<h3><i class="fa-solid fa-laptop-code mr-1"></i> Team Profile Generator by Jessica E. Calderon. © 2022. </h3>
+</footer>
 </html>
     `
 }

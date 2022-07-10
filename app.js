@@ -215,7 +215,7 @@ const startIntern = () => {
         {
             type: 'input',
             name: 'school',
-            message: "Please enter the Intern's school name! (Required)",
+            message: "Please enter the Intern's school name. (Required)",
             validate: school => {
                 if (school) {
                     return true;
@@ -240,7 +240,6 @@ const teamFinish = () => {
     Team building completed!
     ========================
     `);
-    console.log(team);
 
 // if dist path doesnt exist
 if (!fs.existsSync(DIST_DIR)) {
